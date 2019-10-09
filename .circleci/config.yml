@@ -2,11 +2,9 @@
 version: 2
 jobs:
   deploy:
-    docker:
-      - image: buildpack-deps:trusty
+    machine: true
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           name: Build and push docker image
           command: |
