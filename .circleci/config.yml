@@ -3,6 +3,7 @@ version: 2
 jobs:
   deploy:
     docker:
+      - image: buildpack-deps:trusty
     steps:
       - checkout
       - setup_remote_docker
