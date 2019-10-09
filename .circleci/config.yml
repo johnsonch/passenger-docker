@@ -9,7 +9,7 @@ jobs:
           name: Build and push docker image
           command: |
             sed "s/phusion/johnsonch/g" Makefile > Makefile
-            make
+            make all
 
 
 workflows:
