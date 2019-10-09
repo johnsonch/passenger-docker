@@ -8,6 +8,7 @@ jobs:
       - run:
           name: Build and push docker image
           command: |
+            echo $dockerhub | docker login -u $dockerhub_username --password-stdin
             cp Makefile CustomMakefile
             sed "s/phusion/johnsonch/g" CustomMakefile > Makefile
             make all
