@@ -10,7 +10,8 @@ jobs:
       - run:
           name: Build and push docker image
           command: |
-            sed "s/phusion/johnsonch/g" Makefile > Makefile
+            cp Makefile CustomMakefile
+            sed "s/phusion/johnsonch/g" CustomMakefile > Makefile
             make build all
 
 
