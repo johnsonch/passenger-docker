@@ -2,6 +2,7 @@
 version: 2
 jobs:
   deploy:
+    docker:
     steps:
       - checkout
       - setup_remote_docker
