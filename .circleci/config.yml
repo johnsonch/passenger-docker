@@ -12,6 +12,8 @@ jobs:
             cp Makefile CustomMakefile
             sed "s/phusion/johnsonch/g" CustomMakefile > Makefile
             make all
+            make tag_latest
+            make release
 
 
 workflows:
