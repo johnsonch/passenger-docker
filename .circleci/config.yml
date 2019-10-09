@@ -1,0 +1,23 @@
+---
+version: 2
+jobs:
+  deploy:
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build and push docker image
+          command: |
+            sed "s/phusion/johnsonch/g" Makefile > Makefile
+            make
+
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - latest_rvm_support
