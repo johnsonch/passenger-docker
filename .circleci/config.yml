@@ -12,7 +12,7 @@ jobs:
           command: |
             cp Makefile CustomMakefile
             sed "s/phusion/johnsonch/g" CustomMakefile > Makefile
-            make build all
+            make all
 
 
 workflows:
